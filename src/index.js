@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Promo from './components/Promo/Promo';
+import AboutProject from './components/AboutProject/AboutProject';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Promo />
+      <AboutProject />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
