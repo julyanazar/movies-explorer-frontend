@@ -1,6 +1,8 @@
+import React from 'react';
+import { useState } from "react";
+
 import "./FilterCheckBox.css";
 import Switch from "../Switch/Switch";
-import { useState } from "react";
 
 const FilterCheckBox = () => {
 
