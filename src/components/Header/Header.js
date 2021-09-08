@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./Header.css";
 import headerLogo from "../../images/header-logo.svg";
-import NavigationAuth from "../NavigationAuth/NavigationAuth";
+import NavigationUnauth from "../NavigationUnauth/NavigationUnauth";
 
 const Header = ({ loggedIn }) => {
     return (
@@ -18,7 +18,7 @@ const Header = ({ loggedIn }) => {
                     alt="Логотип"
                 />
             </Link>
-            {!loggedIn && <NavigationAuth />}
+            {!loggedIn && <NavigationUnauth />}
         </header>
     );
 };
