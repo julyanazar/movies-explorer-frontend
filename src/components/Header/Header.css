@@ -1,10 +1,14 @@
 .header {
     padding: 18px 70px;
-    background: #F3C1F8;
+    background-color: #F3C1F8;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.header_is_auth {
+    background-color: #FFFFFF;
+}
+
 .header__logo-link {
     display: flex;
 }
