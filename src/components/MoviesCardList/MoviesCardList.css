@@ -26,6 +26,12 @@
     padding: 11px 0 9px 0;
     border: none;
     outline: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.movies-cards__button:hover {
+    opacity: 0.8;
 }
 
 @media (max-width: 1100px) {

@@ -39,6 +39,11 @@
     margin: 0;
     display: flex;
     justify-content: space-between;
+    transition: opaciti 0.3s ease;
+}
+
+.project__url:hover {
+    opacity: 0.7;
 }
 
 .project__url::after {

@@ -19,10 +19,20 @@
   border-radius: 3px;
   margin: 0 0 0 30px;
   padding: 8px 20px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-unauth__link_type_signin:hover {
+  opacity: 0.8;
 }
   
 .nav-unauth__link_type_signup {
   color: #000000;
+  transition: opacity 0.3s ease;
+}
+
+.nav-unauth__link_type_signup:hover {
+  opacity: 0.8;
 }
   
 @media (max-width: 450px) {

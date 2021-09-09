@@ -9,7 +9,7 @@ const Movies = () => {
             <SearchForm />
             <MoviesCardList
                 cards={movies}
-                pageSavedMovies={true}
+                pageSavedMovies={false}
                 buttonMore={true}
             />
         </section>

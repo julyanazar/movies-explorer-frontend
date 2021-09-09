@@ -15,7 +15,7 @@
     transition: border-bottom 0.3s ease;
 }
 
-.inputin_auth:focus {
+.input_in_auth:focus {
     border-bottom: 1px solid #000000;
 }
 
@@ -68,6 +68,10 @@
     line-height: 13px;
     padding: 16px 0;
     border : none;
+}
+
+.input_in_profile:focus {
+    transform: scale(1.02);
 }
   
 .input__error-message {

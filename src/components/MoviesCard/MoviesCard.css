@@ -1,5 +1,6 @@
 .card-movie {
     list-style: none;
+    cursor: pointer;
 }
 
 .card-movie__image-container {
@@ -15,6 +16,7 @@
 }
 
 .card-movie__button {
+    display: none;
     position: absolute;
     top: 14px;
     right: 14px;
@@ -28,6 +30,7 @@
     padding: 6px 7px;
     border: none;
     outline: none;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -35,8 +38,13 @@
     background-color: #FF4062;
     color: #FFFFFF;
 }
+
+.card-movie:hover .card-movie__button {
+    display: block;
+}
   
 .card-movie__button_type_saved {
+    display: block;
     width: 21px;
     height: 21px;
     background-color: #FF4062;
