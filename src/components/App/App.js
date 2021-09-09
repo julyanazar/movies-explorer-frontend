@@ -8,6 +8,9 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 import Main from "../Main/Main";
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
+import Register from "../Register/Register";
+import Login from "../Login/Login";
+import Profile from "../Profile/Profile";
 
 function App() {
 
@@ -28,6 +31,16 @@ function App() {
                     <Header loggedIn={true} />
                     <SavedMovies />
                     <Footer />
+                </Route>
+                <Route path="/signup">
+                    <Register />
+                </Route>
+                <Route path="/signin">
+                    <Login />
+                </Route>
+                <Route path="/profile">
+                    <Header loggedIn={true} />
+                    <Profile />
                 </Route>
                 <Route path="*">
                     <PageNotFound />
