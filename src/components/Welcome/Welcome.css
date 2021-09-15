@@ -1,0 +1,54 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+
+.welcome_in_profile {
+    padding: 0;
+}
+
+.welcome__link {
+    width: fit-content;
+    align-self: flex-start;
+    margin-bottom: 40px;
+}
+
+.welcome__logo {
+    width: 38px;
+    height: 38px;
+    transition: opacity 0.3s ease;
+}
+
+.welcome__logo:hover {
+    opacity: 0.8;
+}
+  
+.welcome__text {
+    color: #000000;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0;
+    text-align: start;
+}
+
+.welcome__text_in_profile {
+    text-align: center;
+}
+  
+@media (max-width: 450px) {
+    .welcome {
+        padding-bottom: 80px;
+    }
+
+    .welcome__link {
+        align-self: center;
+        margin-bottom: 50px;
+    }
+    
+    .welcome__text {
+        text-align: center;
+    }
+}
