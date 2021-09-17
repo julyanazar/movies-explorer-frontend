@@ -25,6 +25,15 @@
 .auth-bottom__button:hover {
     opacity: 0.8;
 }
+
+.auth-bottom__button_disabled {
+    background-color: #F8F8F8;
+    border: 1px solid #A0A0A0;
+    color: #000000;
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+  }
   
 .auth-bottom__paragraph {
     color: #A0A0A0;

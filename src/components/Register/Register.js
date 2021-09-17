@@ -1,36 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./Register.css";
 import Welcome from "../Welcome/Welcome";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
 import AuthBottom from "../AuthBottom/AuthBottom";
 
-const Register = () => {
+import { useValidation } from '../../utils/validation';
+
+const Register = ({ onRegister }) => {
 
     const loggedIn = false;
-    const [errors, setErrors] = useState({});
-    const [values, setValues] = useState({
-        name: "",
-        email: "",
-        password: "",
-    });
+    const { values, errors, isValid, handleChange } = useValidation();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    };
-
-    const handleChangeInput = (evt) => {
-        const { name, validationMessage, value } = evt.target;
-
-        setValues({
-            ...values,
-            [name]: value,
-        });
-
-        setErrors({
-            ...errors,
-            [name]: validationMessage,
-        });
+        onRegister(values.name, values.email, values.password);
     };
 
     return (
@@ -53,8 +37,8 @@ const Register = () => {
                     placeholder="Введите имя"
                     minLength="2"
                     maxLength="30"
-                    onChange={handleChangeInput}
-                    value={values.name}
+                    onChange={handleChange}
+                    value={values.name || ""}
                     error={errors.name}
                 />
                 <Input
@@ -64,8 +48,8 @@ const Register = () => {
                     name="email"
                     type="email"
                     placeholder="Введите почту"
-                    onChange={handleChangeInput}
-                    value={values.email}
+                    onChange={handleChange}
+                    value={values.email || ""}
                     error={errors.email}
                 />
 
@@ -76,12 +60,13 @@ const Register = () => {
                     name="password"
                     type="password"
                     placeholder="Введите пароль"
-                    onChange={handleChangeInput}
-                    value={values.password}
+                    onChange={handleChange}
+                    value={values.password || ""}
                     error={errors.password}
                 />
 
                 <AuthBottom
+                    buttonDisabled={!isValid}
                     buttonText="Зарегистрироваться"
                     paragraph="Уже зарегистрированы?"
                     linkText="Войти"

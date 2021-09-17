@@ -1,35 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./Login.css";
 import Welcome from "../Welcome/Welcome";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
 import AuthBottom from "../AuthBottom/AuthBottom";
 
-const Login = () => {
+import { useValidation } from '../../utils/validation';
+
+const Login = ({ onLogin }) => {
 
     const loggedIn = false;
-    const [errors, setErrors] = useState({});
-    const [values, setValues] = useState({
-        email: "",
-        password: "",
-    });
+    const { values, errors, isValid, handleChange } = useValidation();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    };
-
-    const handleChangeInput = (evt) => {
-        const { name, validationMessage, value } = evt.target;
-
-        setValues({
-            ...values,
-            [name]: value,
-        });
-
-        setErrors({
-            ...errors,
-            [name]: validationMessage,
-        });
+        onLogin(values.email, values.password);
     };
 
     return (
@@ -50,8 +35,8 @@ const Login = () => {
                     name="email"
                     type="email"
                     placeholder="Введите почту"
-                    onChange={handleChangeInput}
-                    value={values.email}
+                    onChange={handleChange}
+                    value={values.email || ""}
                     error={errors.email}
                 />
 
@@ -62,12 +47,13 @@ const Login = () => {
                     name="password"
                     type="password"
                     placeholder="Введите пароль"
-                    onChange={handleChangeInput}
-                    value={values.password}
+                    onChange={handleChange}
+                    value={values.password || ""}
                     error={errors.password}
                 />
 
                 <AuthBottom
+                    buttonDisabled={!isValid}
                     buttonText="Войти"
                     paragraph="Ещё не зарегистрированы?"
                     linkText="Регистрация"
