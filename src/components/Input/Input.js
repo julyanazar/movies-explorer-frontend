@@ -11,6 +11,7 @@ const Input = ({
     maxLength,
     onChange,
     value,
+    defaultValue,
     error,
     auth,
     editProfile
@@ -64,6 +65,7 @@ const Input = ({
                             maxLength={maxLength}
                             onChange={onChange}
                             value={value}
+                            defaultValue={defaultValue}
                             error={error}
                             required
                             autoComplete="off"

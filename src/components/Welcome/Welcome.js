@@ -24,7 +24,7 @@ const Welcome = ({
                     </img>
                 </Link>
             )}
-            <h1 className={`welcome__text ${name === "profile" ? "welcome__text_in_profile" : ""}`}>{text}</h1>
+            <h1 className={`welcome__text ${name === "profile" ? "welcome__text_in_profile" : ""}`}>{"Привет, " + text}</h1>
         </div>
     );
 };
