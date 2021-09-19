@@ -23,7 +23,9 @@ const Movies = ({
 
     const handleSearchSubmit = (value) => {
         setSearchValue(value);
-        onGetMovies();
+        if (!cards.length) {
+            onGetMovies();
+        }
     }
 
     const handleToggleSwitch = () => {

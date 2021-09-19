@@ -14,7 +14,8 @@ const Input = ({
     defaultValue,
     error,
     auth,
-    editProfile
+    editProfile,
+    disabled
 }) => {
 
     return (
@@ -69,6 +70,7 @@ const Input = ({
                             error={error}
                             required
                             autoComplete="off"
+                            disabled={disabled}
                         />
                     </div>
                 )
