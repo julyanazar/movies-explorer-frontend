@@ -56,6 +56,18 @@
     justify-content: space-between;
 }
 
+.search__error {
+    color: red;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+    margin: 20px 0 0 0;
+    padding: 0 0 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 770px) {
     .search {
         margin: 60px 30px 10px;

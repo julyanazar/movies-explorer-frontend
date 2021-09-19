@@ -92,7 +92,7 @@ export default class Api {
 }
 
 export const mainApi = new Api({
-    url: 'https://api.movies-diploma.nomoredomains.monster',
+    url: 'http://localhost:3001',
     headers: {
         'Accept': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('token')}`,

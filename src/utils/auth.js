@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.movies-diploma.nomoredomains.monster';
+export const BASE_URL = 'http://localhost:3001';
 
 const checkRequestResult = (res) => {
     if (res.ok) {

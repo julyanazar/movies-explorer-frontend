@@ -23,7 +23,7 @@ const Profile = ({ onSignOut, onUpdate }) => {
 
     return (
         <>
-            <Header loggedIn={true} />
+            <Header />
             <section className="profile">
                 <Welcome
                     text={currentUser.name}
