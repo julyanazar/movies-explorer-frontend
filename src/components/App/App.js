@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route, useHistory } from "react-router-dom";
+import { Switch, Route, useHistory, useLocation } from "react-router-dom";
 
 import "./App.css";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -42,6 +42,9 @@ function App() {
 
     const history = useHistory();
 
+    const location = useLocation();
+    const path = location.pathname;
+
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (token) {
@@ -49,7 +52,7 @@ function App() {
                 .then((res) => {
                     if (res) {
                         setIsLoggedIn(true);
-                        history.push("/movies");
+                        history.push(path);
                     }
                 })
                 .catch((err) => {
@@ -99,6 +102,8 @@ function App() {
     function onSignOut() {
         setIsLoggedIn(false);
         localStorage.removeItem("token");
+        localStorage.removeItem('current-user');
+        localStorage.removeItem('saved-movies');
         setCurrentUser({});
         setSavedMovies([]);
         history.push("/");
@@ -265,7 +270,6 @@ function App() {
                     onClose={closeAllPopaps}
                     image={tooltipImage}
                     message={message}
-                    loggedIn={loggedIn}
                 />
             </div>
         </CurrentUserContext.Provider>
