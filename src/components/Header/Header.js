@@ -13,7 +13,7 @@ const Header = () => {
     const currentUser = useContext(CurrentUserContext);
 
     return (
-        <header className={`header ${!currentUser.email ? "header_is_auth" : ""}`}>
+        <header className={`header ${currentUser.email ? "header_is_auth" : ""}`}>
             <Link
                 to="/"
                 className="header__logo-link"

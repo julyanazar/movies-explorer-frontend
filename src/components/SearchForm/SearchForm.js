@@ -30,6 +30,7 @@ const SearchForm = ({
 
     return (
         <section className="search">
+        <div className="search-wrapper">
             <form
                 className="search__form"
                 onSubmit={handleSubmit}
@@ -50,12 +51,12 @@ const SearchForm = ({
                     </button>
                 </div>
             </form>
+            {error && <span className="search__error">{error}</span>}
+        </div>
             <FilterCheckBox i
-                sOn={isOn}
+                isOn={isOn}
                 handleToggle={handleToggle}
             />
-            {error && <span className="search__error">{error}</span>}
-            <div className="search__line"></div>
         </section>
     );
 };
