@@ -189,13 +189,13 @@ function App() {
         const movieId = movie.id || movie.movieId;
         const userMovie = savedMovies
             .find((savedMovie) =>
-                savedMovie.movieId === movieId);
+                savedMovie.movieId === String(movieId));
 
         mainApi.deleteMovie(userMovie._id)
             .then(() => {
                 const newSavedMovies = savedMovies
                     .filter(
-                        (savedMovie) => savedMovie.movieId !== movieId);
+                        (savedMovie) => savedMovie.movieId !== String(movieId));
 
                 setSavedMovies(newSavedMovies);
             })
