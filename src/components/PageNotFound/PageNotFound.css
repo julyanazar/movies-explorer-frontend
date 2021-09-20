@@ -31,6 +31,7 @@
 }
 
 .not-found__link {
+    background: transparent;
     text-decoration: none;
     color: #000000;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -40,6 +41,10 @@
     width: fit-content;
     align-self: center;
     transition: opacity 0.3s ease;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    border: none;
 }
 
 .not-found__link:hover {

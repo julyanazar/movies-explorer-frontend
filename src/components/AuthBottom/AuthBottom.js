@@ -7,7 +7,8 @@ const AuthBottom = ({
     paragraph,
     linkText,
     href,
-    name
+    name,
+    buttonDisabled
 }) => {
 
     return (
@@ -16,8 +17,9 @@ const AuthBottom = ({
                 ${name === "login" ? "auth-bottom_in_login" : ""}
                 ${name === "register" ? "auth-bottom_in_register" : ""}`}>
             <button
-                className="auth-bottom__button"
+                className={`auth-bottom__button ${buttonDisabled ? "auth-bottom__button_disabled" : ""}`}
                 type="submit"
+                disabled={buttonDisabled}
             >
                 {buttonText}
             </button>

@@ -1,41 +1,48 @@
-import React, { useState } from "react";
+import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
-import Preloader from "../Preloader/Preloader";
 
-const MoviesCardList = ({ cards, pageSavedMovies, buttonMore }) => {
+import * as utils from "../../utils/utils";
 
-    const [isLoading, setLoading] = useState(false);
-    const handlePreloader = () => { setLoading(true) };
+const MoviesCardList = ({
+    cards,
+    buttonMore,
+    onClickMoreButton,
+    onCardClickButton,
+    movieSearchError, }) => {
+
+    const visibilityCards = cards.length > 0;
 
     return (
         <section className="movies-cards">
-            <ul className="movies-cards__list">
-                {cards.map((card) => (
-                    <MoviesCard
-                        key={card.id}
-                        card={card}
-                        pageSavedMovies={pageSavedMovies}
-                    />
-                ))}
-            </ul>
 
-            {isLoading ? (<Preloader />) :
-                (
-                    buttonMore &&
-                    (
-                        <div className="movies-cards__button-container">
-                            <button
-                                className="movies-cards__button"
-                                type="button"
-                                name="more"
-                                onClick={handlePreloader}
-                            >
-                                Ещё
-                            </button>
-                        </div>
-                    )
-                )}
+            {!visibilityCards && <p className="cards__message">{movieSearchError}</p>}
+
+            {visibilityCards && (
+                <ul className="movies-cards__list">
+                    {cards.map((card) => (
+                        <MoviesCard
+                            key={utils.getMovieKey(card)}
+                            card={card}
+                            onCardClickButton={onCardClickButton}
+                        />
+                    ))}
+                </ul>
+            )}
+
+            {buttonMore && (
+                <div className="movies-cards__button-container">
+                    <button
+                        className="movies-cards__button"
+                        type="button"
+                        name="more"
+                        onClick={onClickMoreButton}
+                    >
+                        Ещё
+                    </button>
+                </div>
+
+            )}
 
         </section>
     );

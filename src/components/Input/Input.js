@@ -11,9 +11,11 @@ const Input = ({
     maxLength,
     onChange,
     value,
+    defaultValue,
     error,
     auth,
-    editProfile
+    editProfile,
+    disabled
 }) => {
 
     return (
@@ -64,9 +66,11 @@ const Input = ({
                             maxLength={maxLength}
                             onChange={onChange}
                             value={value}
+                            defaultValue={defaultValue}
                             error={error}
                             required
                             autoComplete="off"
+                            disabled={disabled}
                         />
                     </div>
                 )

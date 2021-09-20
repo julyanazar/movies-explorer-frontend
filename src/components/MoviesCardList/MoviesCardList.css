@@ -2,6 +2,11 @@
     padding: 70px 70px 50px;
 }
 
+.movies-cards__message {
+    text-align: center;
+    letter-spacing: -0.04em;
+}
+
 .movies-cards__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

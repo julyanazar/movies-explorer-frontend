@@ -42,6 +42,10 @@
 .card-movie:hover .card-movie__button {
     display: block;
 }
+
+.card-movie__link:hover + .card-movie__button {
+    opacity: 1;
+}
   
 .card-movie__button_type_saved {
     display: block;
